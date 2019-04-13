@@ -68,7 +68,7 @@ while p==0:
         p=1
         break
     else:
-        print("enter a valid input")
+        print("enter a valid input,,,wait for a second to enter the input....")
         sleep(1)
     system("cls")
     print(f"Number of steps taken::{steps}",end="\n\n")
