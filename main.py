@@ -9,13 +9,16 @@ sleep(1)
 system('cls')
 print("THE NUMBER PUZZLE GAME....")
 sleep(1)
+string=''
 system('cls')
 a=[[' 1',' 2',' 3',' 4'],[' 5',' 6',' 7',' 8'],[' 9','10','11','12'],['13','14','15','  ']]
 def display():
+    print('press \"a\",\"w\",\"d\",\"s\"  to move left,up,right,down respectively\npress "q" to quit',end='\n\n')
     for i in range(0,4):
         for j in range(0,4):
             print("|| "+a[i][j],end=" ")
         print("||"+"\n")
+    print(string)
 char=''
 steps=0
 while char!='c':
@@ -49,27 +52,30 @@ while p==0:
         a[m+1][n]=a[m][n]
         a[m][n]=t
         steps+=1
+        string=''
     elif c=='s' and m>0:
         t=a[m-1][n]
         a[m-1][n]=a[m][n]
         a[m][n]=t
         steps+=1
+        string=''
     elif c=='d' and n>0:
         t=a[m][n]
         a[m][n]=a[m][n-1]
         a[m][n-1]=t
         steps+=1
+        string=''
     elif c=='a' and n<3:
         t=a[m][n]
         a[m][n]=a[m][n+1]
         a[m][n+1]=t
         steps+=1
+        string=''
     elif c=='q':
         p=1
         break
     else:
-        print("enter a valid input,,,wait for a second to enter the input....")
-        sleep(1)
+        string='Please enter a valid input....'
     system("cls")
     print(f"Number of steps taken::{steps}",end="\n\n")
     display()
